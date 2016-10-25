@@ -29,9 +29,12 @@
           <ul>
             <li><h3>{{item.name | uppercase}}</h3></li>
             <li><span class='title'>COLOR:</span>{{item.color | uppercase}}</li>
-            <li><span class='title'>QTY:</span>{{item.quantity}}</li>
             <li class='item-price'>{{shop.getPrice(item) | currency}}<img class='sale-icon' src='images/sale_tag.png' ng-show='shop.onSale'></li>
           </ul>
+          <div class='add-to-cart'>
+            <div class='item-qty'><span class='title'>QTY:</span>{{item.quantity}}</div>
+            <button>Add to Cart</button>
+          </div>
         </div>
 
 

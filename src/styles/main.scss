@@ -39,19 +39,40 @@ main {
       @include span-columns(3);
       @include omega(4n);
       display: flex;
+      flex-wrap: wrap;
       align-items: center;
       border: $base-border;
       border-radius: $base-border-radius;
       padding: 10px;
+      min-height: 150px;
       margin-bottom: 10px;
+
+      ul {
+        @include fill-parent;
+        margin-bottom: 10px;
+      }
+
       li {
         display: flex;
         align-items: center;
-        .title {
-          font-size: .8em;
-          margin-right: 5px;
-        }
+        justify-content: center;
       }
+
+      .title {
+        font-size: .8em;
+        margin-right: 5px;
+      }
+
+      .add-to-cart {
+        @include fill-parent;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 10px;
+
+      }
+
+
 
     }
   }
