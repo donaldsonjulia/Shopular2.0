@@ -1,6 +1,59 @@
-@import "bourbon";
-@import "base/base";
-@import "neat";
 
-@import "partials/meyer-reset.scss";
+@import "bourbon";
+@import "neat";
+@import "partials/normalize.scss";
+@import "base/base";
 @import "partials/mixins.scss";
+
+
+header {
+  background-color: $secondary-background-color;
+  @include outer-container;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 10px;
+
+  .shop-title {
+    @include span-columns(4);
+  }
+  .shop-menu{
+    @include span-columns(8);
+    @include omega();
+    text-align: right;
+  }
+  .nav-wrapper{
+    @include span-columns(12);
+      .nav-item {
+        @include span-columns(4 of 12);
+        text-align: center;
+      }
+  }
+
+}
+
+main {
+  .shop-wrapper {
+    @include outer-container;
+    padding: 10px 20px;
+    .shop-item-container {
+      @include span-columns(3);
+      @include omega(4n);
+      display: flex;
+      align-items: center;
+      border: $base-border;
+      border-radius: $base-border-radius;
+      padding: 10px;
+      margin-bottom: 10px;
+      li {
+        display: flex;
+        align-items: center;
+        .title {
+          font-size: .8em;
+          margin-right: 5px;
+        }
+      }
+
+    }
+  }
+
+}

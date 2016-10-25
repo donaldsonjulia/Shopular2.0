@@ -1,18 +1,43 @@
-
-
 <!DOCTYPE html>
-<html lang='en'>
-    <head>
-      <meta charset='UTF-8'>
-      <meta content="width=device-width, initial-scale=1" name="viewport">
-<!-- <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
-     <link rel="icon" href="images/favicon.ico" type="image/x-icon"> -->
-        <title></title>
-        <link rel="stylesheet" href="lib/styles/main.min.css">
-    </head>
-    <body>
-      <nav></nav>
-      <main></main>
-        <script src="lib/js/vendor.min.js"></script>
-        <script src="lib/js/main.js"></script>
+
+<html lang='en' ng-app='shopular'>
+
+<head>
+    <meta charset='UTF-8'>
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <title>Shopular</title>
+    <link rel="stylesheet" href="lib/styles/main.min.css">
+</head>
+
+<body ng-controller='ShopController as shop'>
+    <header>
+        <div class='shop-title'>
+          <h2>{{shop.title}}</h2>
+        </div>
+        <div class='shop-menu'>
+          <i id='nav-icon' class='material-icons'>menu</i>
+        </div>
+        <div class='nav-wrapper'>
+            <div class='nav-item'>Shop</div>
+            <div class='nav-item'>About</div>
+            <div class='nav-item'>Contact</div>
+        </div>
+    </header>
+    <main>
+      <div class='shop-wrapper'>
+        <div ng-repeat='item in shop.inventory' class='shop-item-container'>
+          <ul>
+            <li><h3>{{item.name | uppercase}}</h3></li>
+            <li><span class='title'>COLOR:</span>{{item.color | uppercase}}</li>
+            <li><span class='title'>QTY:</span>{{item.quantity}}</li>
+            <li class='item-price'>{{shop.getPrice(item) | currency}}<img class='sale-icon' src='images/sale_tag.png' ng-show='shop.onSale'></li>
+          </ul>
+        </div>
+
+
+      </div>
+    </main>
+    <script src="lib/js/vendor.min.js"></script>
+    <script src="lib/js/main.js"></script>
+</body>
 </html>
