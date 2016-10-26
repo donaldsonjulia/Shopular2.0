@@ -1,20 +1,42 @@
 header {
   background-color: $secondary-background-color;
   @include outer-container;
-  padding-left: 10px;
-  padding-right: 10px;
-  padding-top: 10px;
+  @include omega();
+  padding: 10px;
+  padding-bottom: 5px;
   position: relative;
-
+  line-height: 1;
 
         h2 {
           float: left;
         }
 
-        i {
+
+        #nav-icon {
           float: right;
-          margin-left: 10px;
+            margin-left: 6px;
+              &:hover {
+                color: #fff;
+              }
+          }
+
+
+
+
+      nav {
+        @include span-columns(12);
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        i {
+          margin: 0 10px;
         }
+          div {
+            display: flex;
+            align-items: center;
+
+          }
 
 
+      }
 }

@@ -5,8 +5,7 @@ $mobile: new-breakpoint(max-width 700px);
 
 // Typography
 
-
-@import url('https://fonts.googleapis.com/css?family=Raleway');
+@import url('https://fonts.googleapis.com/css?family=Raleway:300,500,700');
 
 @import url('https://fonts.googleapis.com/icon?family=Material+Icons');
 
@@ -29,8 +28,8 @@ $base-z-index: 0;
 // Colors
 $blue: #1565c0;
 $dark-gray: #333;
-$medium-gray: #A6AEC1;
-$light-gray: #CFD5E1;
+$medium-gray: #CED3CF;
+$light-gray: #EFEEEE;
 
 // Font Colors
 $base-font-color: $dark-gray;
@@ -42,7 +41,7 @@ $base-border: 1px solid $base-border-color;
 
 // Background Colors
 $base-background-color: #fff;
-$secondary-background-color: tint($base-border-color, 80%);
+$secondary-background-color: tint($base-border-color, 75%);
 
 // Forms
 $form-box-shadow: inset 0 1px 3px rgba(#000, 0.06);

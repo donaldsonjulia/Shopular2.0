@@ -9,36 +9,34 @@
 
     <body ng-controller='ShopController as shop'>
         <header>
-
             <h2>{{shop.title}}</h2>
-
-            <i id='cart-icon' class='material-icons'>shopping_cart</i>
             <i id='nav-icon' class='material-icons'>menu</i>
-
+            <nav>
+                <div>
+                    <i id='add-item-icon' class='material-icons'>add_box</i>Add New Item</div>
+            </nav>
         </header>
+
         <main>
-            <div class='shop-wrapper'>
-                <div ng-repeat='item in shop.inventory' class='shop-item-container'>
-                    <ul>
-                        <li>
-                            <h3>{{item.name | uppercase}}</h3>
-                        </li>
-                        <li>
-                            <span class='title'>COLOR:</span>{{item.color | uppercase}}</li>
-                        <li class='item-price'>{{shop.getPrice(item) | currency}}<img class='sale-icon' src='images/sale_tag.png' ng-show='shop.onSale'></li>
-                    </ul>
-                    <div class='add-to-cart'>
-                        <label for='item-quantity'>QTY:</label>
-                        <select name='quantity' id='item-quantity'>
-                            <option ng-repeat='number in shop.getQty(item)'>{{number}}</option>
-                        </select>
-                        <button>Add to Cart</button>
-                    </div>
-                </div>
+            <div class="shop-content">
+                <table>
+                    <thead>
+                        <th class='item-col'>Item</th>
+                        <th>Color</th>
+                        <th>Qty</th>
+                        <th class='price-col'>Price</th>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat='item in shop.inventory'>
+                            <td class='item-col'>{{item.name | uppercase}}</td>
+                            <td>{{item.color | uppercase}}</td>
+                            <td>{{item.quantity}}</td>
+                            <td>{{shop.getPrice(item) | currency}}<img class='sale-icon' src='images/sale_tag.png' ng-show='shop.OnSale'></td>
+
+                        </tr>
+                    </tbody>
+                </table>
             </div>
-            <aside>
-                <h3>SHOPPING CART</h3>
-            </aside>
         </main>
         <script src="./node_modules/angular/angular.js"></script>
         <script src="./node_modules/angular-ui-router/release/angular-ui-router.min.js"></script>
