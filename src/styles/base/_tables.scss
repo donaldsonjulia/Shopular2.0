@@ -6,13 +6,22 @@ table {
 }
 
 th {
-  border-bottom: $base-border;
+  border-bottom: 5px solid $base-border-color;
   font-weight: 700;
   font-size: 1.2em;
   padding: $small-spacing;
   text-align: left;
   background-color: $base-border-color;
+    &:hover {
+      border-bottom: 5px solid shade($base-border-color, 50%);
+    }
 }
+
+tr:nth-child(odd) {
+  background-color: $secondary-background-color;
+}
+
+
 
 td {
   border-bottom: $base-border;

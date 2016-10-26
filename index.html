@@ -3,7 +3,7 @@
     <head>
         <meta charset='UTF-8'>
         <meta content="width=device-width, initial-scale=1" name="viewport">
-        <title>Shopular</title>
+        <title>Angular Shop</title>
         <link rel="stylesheet" href="lib/styles/main.min.css">
     </head>
 
@@ -22,25 +22,24 @@
                 <table>
                     <thead>
                         <th class='item-col'>Item</th>
-                        <th>Color</th>
-                        <th>Qty</th>
+                        <th class='color-col'>Color</th>
+                        <th class='qty-col'>Qty</th>
                         <th class='price-col'>Price</th>
                     </thead>
                     <tbody>
                         <tr ng-repeat='item in shop.inventory'>
                             <td class='item-col'>{{item.name | uppercase}}</td>
-                            <td>{{item.color | uppercase}}</td>
-                            <td>{{item.quantity}}</td>
-                            <td>{{shop.getPrice(item) | currency}}<img class='sale-icon' src='images/sale_tag.png' ng-show='shop.OnSale'></td>
-
+                            <td class='color-col'>{{item.color | uppercase}}</td>
+                            <td class='qty-col'>{{item.quantity}}</td>
+                            <td class='price-col'>{{shop.getPrice(item) | currency}}<img class='sale-icon' src='images/sale_tag.png' ng-show='shop.OnSale'></td>
                         </tr>
                     </tbody>
                 </table>
             </div>
         </main>
-        <script src="./node_modules/angular/angular.js"></script>
-        <script src="./node_modules/angular-ui-router/release/angular-ui-router.min.js"></script>
-        <script src="./node_modules/angular-local-storage/dist/angular-local-storage.min.js"></script>
+        <!-- <script src="./node_modules/angular/angular.js"></script> -->
+        <!-- <script src="./node_modules/angular-ui-router/release/angular-ui-router.min.js"></script>
+        <script src="./node_modules/angular-local-storage/dist/angular-local-storage.min.js"></script> -->
         <script src="./lib/js/vendor.min.js"></script>
         <script src="./lib/js/main.js"></script>
     </body>
