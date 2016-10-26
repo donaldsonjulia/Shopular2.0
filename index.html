@@ -21,6 +21,7 @@
             <div class='nav-item'>Shop</div>
             <div class='nav-item'>About</div>
             <div class='nav-item'>Contact</div>
+            <div class='nav-item'><i class='material-icons'>shopping_cart</i></div>
         </div>
     </header>
     <main>
@@ -32,13 +33,17 @@
             <li class='item-price'>{{shop.getPrice(item) | currency}}<img class='sale-icon' src='images/sale_tag.png' ng-show='shop.onSale'></li>
           </ul>
           <div class='add-to-cart'>
-            <div class='item-qty'><span class='title'>QTY:</span>{{item.quantity}}</div>
+            <label for='item-quantity'>QTY:</label>
+            <select name='quantity' id='item-quantity'>
+              <option ng-repeat='number in shop.getQty(item)'>{{number}}</option>
+            </select>
             <button>Add to Cart</button>
           </div>
         </div>
-
-
       </div>
+      <aside>
+        <h3>SHOPPING CART</h3>
+      </aside>
     </main>
     <script src="lib/js/vendor.min.js"></script>
     <script src="lib/js/main.js"></script>

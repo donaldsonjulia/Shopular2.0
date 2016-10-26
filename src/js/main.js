@@ -94,24 +94,8 @@
             }
         ];
 
-        // this.addTax = function(item) {
-        //   var tax = 1.0575;
-        //   return item.price * tax;
-        // };
 
         this.onSale = null;
-        // this.fullPrice = null;
-
-        // this.includeDiscount = function(item) {
-        //   if (item.discount === 0) {
-        //     this.salePrice = null;
-        //     this.fullPrice = true;
-        //   } else if (item.discount > 0) {
-        //     this.salePrice = item.price - item.discount;
-        //     this.fullPrice = true;
-        //     return this.salePrice;
-        //   };
-        // };
 
         this.getPrice = function(item) {
           var tax = 1.0575;
@@ -123,13 +107,15 @@
             this.onSale = (item.price - item.discount) * tax;
             return this.onSale;
           };
-
-
-
-
         };
 
-
+        this.getQty = function(item) {
+          var qty = [];
+          for (var count = 0; count <= item.quantity; count++) {
+            qty.push(count);
+          }
+          return qty;
+        };
 
     });
 
