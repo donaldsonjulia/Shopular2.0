@@ -3,7 +3,7 @@
     <head>
         <meta charset='UTF-8'>
         <meta content="width=device-width, initial-scale=1" name="viewport">
-        <title>Shopular</title>
+        <title>Angular Shop</title>
         <link rel="stylesheet" href="lib/styles/main.min.css">
     </head>
 
@@ -31,7 +31,7 @@
                             <td class='item-col'>{{item.name | uppercase}}</td>
                             <td>{{item.color | uppercase}}</td>
                             <td>{{item.quantity}}</td>
-                            <td><span>{{shop.getPrice(item) | currency}}</span><img class='sale-icon' src='images/sale_tag.png' ng-show='item.discount'></td>
+                            <td><span ng-class="{'on-sale': item.discount !== 0}">{{shop.getPrice(item) | currency}}</span><img class='sale-icon' src='images/sale_tag.png' ng-show='item.discount'></td>
                         </tr>
                     </tbody>
                 </table>
