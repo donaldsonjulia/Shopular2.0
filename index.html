@@ -31,8 +31,7 @@
                             <td class='item-col'>{{item.name | uppercase}}</td>
                             <td>{{item.color | uppercase}}</td>
                             <td>{{item.quantity}}</td>
-                            <td>{{shop.getPrice(item) | currency}}<img class='sale-icon' src='images/sale_tag.png' ng-show='shop.OnSale'></td>
-
+                            <td><span>{{shop.getPrice(item) | currency}}</span><img class='sale-icon' src='images/sale_tag.png' ng-show='item.discount'></td>
                         </tr>
                     </tbody>
                 </table>
