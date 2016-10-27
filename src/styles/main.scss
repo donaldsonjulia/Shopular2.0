@@ -1,8 +1,7 @@
 
-@import "bourbon";
-// @import "neat";
 @import "partials/normalize.scss";
-@import "base/base";
-@import "partials/mixins.scss";
+@import "partials/variables.scss";
+@import "partials/body.scss";
 @import "partials/header.scss";
-@import "partials/shop-main.scss";
+@import "partials/add-item-container.scss";
+@import "partials/shop-content.scss";

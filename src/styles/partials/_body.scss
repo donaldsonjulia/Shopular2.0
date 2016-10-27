@@ -1,3 +1,20 @@
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+
 body {
   color: $base-font-color;
   font-family: $base-font-family;
@@ -17,10 +34,6 @@ h6 {
   margin: 0;
 }
 
-p {
-  margin: 0;
-}
-
 a {
   color: $action-color;
   text-decoration: none;
@@ -31,12 +44,4 @@ a {
   &:hover {
     color: shade($action-color, 25%);
   }
-}
-
-hr {
-  border-bottom: $base-border;
-  border-left: 0;
-  border-right: 0;
-  border-top: 0;
-  margin: $base-spacing 0;
 }

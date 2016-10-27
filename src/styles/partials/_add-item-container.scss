@@ -1,0 +1,73 @@
+
+
+div.add-item-container {
+
+  display: none;
+  width: 100%;
+  padding: 20px;
+
+  form {
+    display: flex;
+    justify-content: space-around;
+  }
+
+  input {
+    appearance: none;
+    background-color: $base-background-color;
+    border: $base-border;
+    border-radius: $base-border-radius;
+    box-shadow: $form-box-shadow;
+    box-sizing: border-box;
+
+    padding: $base-spacing / 3;
+    transition: border-color $base-duration $base-timing;
+
+
+    &:hover {
+      border-color: shade($base-border-color, 20%);
+    }
+
+    &:focus {
+      border-color: $action-color;
+      box-shadow: $form-box-shadow-focus;
+      outline: none;
+    }
+
+    &:disabled {
+      background-color: shade($base-background-color, 5%);
+      cursor: not-allowed;
+
+      &:hover {
+        border: $base-border;
+      }
+    }
+
+    &:placeholder {
+      color: tint($base-font-color, 40%);
+    }
+  }
+
+  input.ng-invalid {
+    border-color: #d3362d;
+   }
+
+  input#item-price,
+  input#item-discount{
+      width: 10%;
+  }
+
+  input#item-qty {
+    width: 5%;
+  }
+
+  button {
+    background-color: $action-color;
+    border-radius: $base-border-radius;
+    border: 0;
+    padding: 5px 10px;
+     &:hover {
+       transform: scale(1.1);
+     }
+
+  }
+}
