@@ -11,16 +11,39 @@
         <header>
             <h2>{{shop.title}}</h2>
             <nav>
-                <div class="nav-option">
-                    <i id="inventory-icon" class="material-icons">list</i>View Inventory
-                </div>
-                <div class="nav-option">
-                    <i id="add-item-icon" class="material-icons">add_box</i>Add New Item
+                <!-- <div id="view-inventory" class="nav-option">
+                    <i class="material-icons">list</i>View Inventory
+                </div> -->
+                <div id="add-new-item" class="nav-option">
+                    <i class="material-icons">add_box</i>Add New Item
                 </div>
             </nav>
+
         </header>
 
         <main>
+          <div class="add-item-container">
+              <form name="newItemForm" novalidate ng-submit="newItemForm.$valid && shop.addItem(item)">
+
+                  <label for="item-name">Name</label>
+                  <input id="item-name" ng-model="item.name" type="text" placeholder="Item Name" required></input>
+
+                  <label for="item-color">Color</label>
+                  <input id="item-color" ng-model="item.color" type="text" placeholder="Color" required></input>
+
+                  <label for="item-qty">Quantity</label>
+                  <input id="item-qty" ng-model="item.quantity" type="number" placeholder="1" required min="1"></input>
+
+                  <label for="item-price">Price</label>
+                  <input id="item-price" ng-model="item.price" type="number" required min="0.01" step="0.01" placeholder="$0.00"></input>
+
+                  <label for="item-discount">Discount</label>
+                  <input id="item-discount" ng-model="item.discount" type="number" placeholder="$0.00" required></input>
+
+                  <button type="submit">Add Item</button>
+              </form>
+          </div>
+
             <div class="shop-content">
                 <table>
                     <thead>
@@ -40,28 +63,6 @@
                     </tbody>
                 </table>
             </div>
-            <div class="add-item-container">
-                <form name="newItemForm" novalidate ng-submit="newItemForm.$valid && shop.addItem(item)">
-
-                    <label for="item-name">Name</label>
-                    <input id="item-name" ng-model="item.name" type="text" placeholder="Item Name" required></input>
-
-                    <label for="item-color">Color</label>
-                    <input id="item-color" ng-model="item.color" type="text" placeholder="Color" required></input>
-
-                    <label for="item-qty">Quantity</label>
-                    <input id="item-qty" ng-model="item.quantity" type="number" placeholder="1" required min="1"></input>
-
-                    <label for="item-price">Price</label>
-                    <input id="item-price" ng-model="item.price" type="number" required min="0.01" step="0.01" placeholder="$0.00"></input>
-
-                    <label for="item-discount">Discount</label>
-                    <input id="item-discount" ng-model="item.discount" type="number" placeholder="$0.00" required></input>
-
-                    <button type="submit">Add Item</button>
-                </form>
-            </div>
-
         </main>
 
         <!-- <script src="./node_modules/angular/angular.js"></script>

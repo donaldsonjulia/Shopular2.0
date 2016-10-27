@@ -1,12 +1,13 @@
 
 
 main {
-  width: 80%;
-  margin: 0 auto;
+  width: 100%;
 
   .shop-content {
+    width: 80%;
+    margin: 0 auto;
 
-    .item-col {
+  table .item-col {
       width: 30%;
     }
 
@@ -18,8 +19,35 @@ main {
       color: #d3362d;
     }
   }
-
   input.ng-invalid { background-color: tint(#9dc6d8, 80%); }
+}
 
 
+.add-item-container {
+  display: none;
+  width: 100%;
+  padding: 20px;
+
+  form {
+    display: flex;
+    justify-content: space-around;
+  }
+
+  input#item-price, input#item-discount{
+      width: 10%;
+  }
+  input#item-qty {
+    width: 5%;
+  }
+  button {
+    background-color: $action-color;
+    border-radius: $base-border-radius;
+    border: 0;
+    padding: 5px 10px;
+     &:hover {
+       transform: scale(1.1);
+
+     }
+
+  }
 }
