@@ -50,7 +50,7 @@
                         <th ng-click="shop.sortBy('name')">Item</th>
                         <th ng-click="shop.sortBy('color')">Color</th>
                         <th ng-click="shop.sortBy('quantity')">Qty</th>
-                        <th class="price-col" ng-click="shop.sortBy('price')">Price</th>
+                        <th class="price-col" ng-click="shop.sortBy('currentPrice')">Price</th>
                     </thead>
                     <tbody>
                         <tr ng-repeat="item in shop.inventory | orderBy: shop.sortParam">

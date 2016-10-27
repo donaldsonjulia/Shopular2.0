@@ -102,10 +102,13 @@
 
         this.getPrice = function(item) {
           var tax = 1.0575;
+          item.currentPrice = null;
 
           if (item.discount === 0) {
+            item.currentPrice = item.price * tax;
             return item.price * tax;
           } else {
+            item.currentPrice = (item.price - item.discount) * tax;
             return (item.price - item.discount) * tax;
           };
         };
