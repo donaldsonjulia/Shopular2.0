@@ -116,16 +116,14 @@
 
 
     }).controller('ItemController', function Item(){
-      this.user = {};
-      this.addItem = function(isValid) {
+      this.item = {};
+      this.addItem = function(item) {
         console.log('in');
-        console.log(isValid);
-        if (isValid) {
+        this.item = angular.copy(item);
+        console.log(this.item);
 
-        }
 
       };
-
 
     });
 

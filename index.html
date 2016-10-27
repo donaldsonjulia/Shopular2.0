@@ -40,8 +40,8 @@
                     </tbody>
                 </table>
             </div>
-            <div class="add-item-container" ng-controller="ItemController as item">
-                <form name="newItemForm" novalidate ng-submit="item.addItem(newItemForm.$valid)">
+            <div class="add-item-container" ng-controller="ItemController as itemCtrl">
+                <form name="newItemForm" novalidate ng-submit="newItemForm.$valid && itemCtrl.addItem(item)">
 
                     <label for="item-name">Name</label>
                     <input id="item-name" ng-model="item.name" type="text" placeholder="Item Name" required></input>
@@ -56,7 +56,7 @@
                     <input id="item-price" ng-model="item.price" type="number" required min="0.01" step="0.01" placeholder="$0.00"></input>
 
                     <label for="item-discount">Discount</label>
-                    <input id="item-discount" ng-model="item.discount" type="number" placeholder="$0.00"></input>
+                    <input id="item-discount" ng-model="item.discount" type="number" placeholder="$0.00" required></input>
 
                     <button type="submit">Add Item</button>
                 </form>
