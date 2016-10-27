@@ -1,13 +1,15 @@
 
 
 main {
-  @include outer-container;
+  width: 80%;
+  margin: 0 auto;
+
   .shop-content {
-    @include span-columns(10);
-    @include shift(1);
+
     .item-col {
       width: 30%;
     }
+
     img.sale-icon {
       width: 20px;
     }
@@ -15,8 +17,9 @@ main {
     .on-sale {
       color: #d3362d;
     }
-
-
   }
+
+  input.ng-invalid { background-color: tint(#9dc6d8, 80%); }
+
 
 }

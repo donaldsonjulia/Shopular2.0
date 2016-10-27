@@ -1,19 +1,22 @@
 <!DOCTYPE html>
-<html lang='en' ng-app='shopular'>
+<html lang="en" ng-app="shopular">
     <head>
-        <meta charset='UTF-8'>
+        <meta charset="UTF-8">
         <meta content="width=device-width, initial-scale=1" name="viewport">
         <title>Angular Shop</title>
         <link rel="stylesheet" href="lib/styles/main.min.css">
     </head>
 
-    <body ng-controller='ShopController as shop'>
+    <body ng-controller="ShopController as shop">
         <header>
             <h2>{{shop.title}}</h2>
-            <i id='nav-icon' class='material-icons'>menu</i>
             <nav>
-                <div>
-                    <i id='add-item-icon' class='material-icons'>add_box</i>Add New Item</div>
+                <div class="nav-option">
+                    <i id="inventory-icon" class="material-icons">list</i>View Inventory
+                </div>
+                <div class="nav-option">
+                    <i id="add-item-icon" class="material-icons">add_box</i>Add New Item
+                </div>
             </nav>
         </header>
 
@@ -21,25 +24,49 @@
             <div class="shop-content">
                 <table>
                     <thead>
-                        <th class='item-col'>Item</th>
+                        <th class="item-col">Item</th>
                         <th>Color</th>
                         <th>Qty</th>
-                        <th class='price-col'>Price</th>
+                        <th class="price-col">Price</th>
                     </thead>
                     <tbody>
-                        <tr ng-repeat='item in shop.inventory'>
-                            <td class='item-col'>{{item.name | uppercase}}</td>
+                        <tr ng-repeat="item in shop.inventory">
+                            <td class="item-col">{{item.name | uppercase}}</td>
                             <td>{{item.color | uppercase}}</td>
                             <td>{{item.quantity}}</td>
-                            <td><span ng-class="{'on-sale': item.discount !== 0}">{{shop.getPrice(item) | currency}}</span><img class='sale-icon' src='images/sale_tag.png' ng-show='item.discount'></td>
+                            <td>
+                                <span ng-class="{'on-sale': item.discount !== 0}">{{shop.getPrice(item) | currency}}</span><img class="sale-icon" src="images/sale_tag.png" ng-show="item.discount"></td>
                         </tr>
                     </tbody>
                 </table>
             </div>
+            <div class="add-item-container" ng-controller="ItemController as item">
+                <form name="newItemForm" novalidate ng-submit="item.addItem(newItemForm.$valid)">
+
+                    <label for="item-name">Name</label>
+                    <input id="item-name" ng-model="item.name" type="text" placeholder="Item Name" required></input>
+
+                    <label for="item-color">Color</label>
+                    <input id="item-color" ng-model="item.color" type="text" placeholder="Color" required></input>
+
+                    <label for="item-qty">Quantity</label>
+                    <input id="item-qty" ng-model="item.quantity" type="number" placeholder="1" required min="1"></input>
+
+                    <label for="item-price">Price</label>
+                    <input id="item-price" ng-model="item.price" type="number" required min="0.01" step="0.01" placeholder="$0.00"></input>
+
+                    <label for="item-discount">Discount</label>
+                    <input id="item-discount" ng-model="item.discount" type="number" placeholder="$0.00"></input>
+
+                    <button type="submit">Add Item</button>
+                </form>
+            </div>
+
         </main>
-        <script src="./node_modules/angular/angular.js"></script>
+
+        <!-- <script src="./node_modules/angular/angular.js"></script>
         <script src="./node_modules/angular-ui-router/release/angular-ui-router.min.js"></script>
-        <script src="./node_modules/angular-local-storage/dist/angular-local-storage.min.js"></script>
+        <script src="./node_modules/angular-local-storage/dist/angular-local-storage.min.js"></script> -->
         <script src="./lib/js/vendor.min.js"></script>
         <script src="./lib/js/main.js"></script>
     </body>
