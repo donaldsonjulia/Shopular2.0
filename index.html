@@ -40,8 +40,8 @@
                     </tbody>
                 </table>
             </div>
-            <div class="add-item-container" ng-controller="ItemController as itemCtrl">
-                <form name="newItemForm" novalidate ng-submit="newItemForm.$valid && itemCtrl.addItem(item)">
+            <div class="add-item-container">
+                <form name="newItemForm" novalidate ng-submit="newItemForm.$valid && shop.addItem(item)">
 
                     <label for="item-name">Name</label>
                     <input id="item-name" ng-model="item.name" type="text" placeholder="Item Name" required></input>
