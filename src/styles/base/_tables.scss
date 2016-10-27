@@ -13,7 +13,7 @@ th {
   text-align: left;
   background-color: $base-border-color;
     &:hover {
-      border-bottom: 5px solid shade($base-border-color, 25%);
+      border-bottom: 5px solid $action-color;
     }
 }
 

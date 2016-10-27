@@ -18,8 +18,17 @@ main {
     .on-sale {
       color: #d3362d;
     }
+
+    .sorted {
+      background-color: $action-color;
+      border-bottom: 5px solid $action-color;
+    }
+
+
   }
   input.ng-invalid { background-color: tint(#9dc6d8, 80%); }
+
+
 }
 
 

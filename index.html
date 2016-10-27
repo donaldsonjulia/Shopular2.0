@@ -47,10 +47,10 @@
             <div class="shop-content">
                 <table>
                     <thead>
-                        <th ng-click="shop.sortBy('name')">Item</th>
-                        <th ng-click="shop.sortBy('color')">Color</th>
-                        <th ng-click="shop.sortBy('quantity')">Qty</th>
-                        <th class="price-col" ng-click="shop.sortBy('currentPrice')">Price</th>
+                        <th ng-click="shop.sortBy('name')" ng-class="{'sorted': shop.sortParam === 'name'}">Item</th>
+                        <th ng-click="shop.sortBy('color')" ng-class="{'sorted': shop.sortParam === 'color'}">Color</th>
+                        <th ng-click="shop.sortBy('quantity')" ng-class="{'sorted': shop.sortParam === 'quantity'}">Qty</th>
+                        <th class="price-col" ng-click="shop.sortBy('currentPrice')" ng-class="{'sorted': shop.sortParam === 'currentPrice'}">Price</th>
                     </thead>
                     <tbody>
                         <tr ng-repeat="item in shop.inventory | orderBy: shop.sortParam">
