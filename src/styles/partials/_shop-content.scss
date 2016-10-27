@@ -12,20 +12,22 @@
     }
 
     th {
-      border-bottom: 5px solid $base-border-color;
-      font-weight: 700;
+      border-bottom: 4px solid $twilight;
+      color: $light-gray;
+      font-weight: 400;
       font-size: 1.2em;
       padding: $small-spacing;
       text-align: left;
-      background-color: $base-border-color;
+      background-color: $twilight;
         &:hover {
-          border-bottom: 5px solid $action-color;
+          border-bottom: 4px solid $action-color;
         }
     }
 
     th.sorted {
       background-color: $action-color;
-      border-bottom: 5px solid $action-color;
+      border-bottom: 4px solid $action-color;
+
     }
 
 
@@ -51,7 +53,7 @@
     }
 
     td .on-sale {
-      color: #d3362d;
+      color: $alert-red;
     }
 
     img.sale-icon {

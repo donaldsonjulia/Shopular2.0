@@ -30,18 +30,19 @@ h5,
 h6 {
   font-family: $heading-font-family;
   font-size: 1.5em;
+  font-weight: 500;
   line-height: $heading-line-height;
   margin: 0;
 }
 
 a {
-  color: $action-color;
+
   text-decoration: none;
   transition: color $base-duration $base-timing;
 
   &:active,
   &:focus,
   &:hover {
-    color: shade($action-color, 25%);
+
   }
 }
