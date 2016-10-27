@@ -47,14 +47,14 @@
             <div class="shop-content">
                 <table>
                     <thead>
-                        <th class="item-col">Item</th>
-                        <th>Color</th>
-                        <th>Qty</th>
-                        <th class="price-col">Price</th>
+                        <th ng-click="shop.sortBy('name')">Item</th>
+                        <th ng-click="shop.sortBy('color')">Color</th>
+                        <th ng-click="shop.sortBy('quantity')">Qty</th>
+                        <th class="price-col" ng-click="shop.sortBy('price')">Price</th>
                     </thead>
                     <tbody>
-                        <tr ng-repeat="item in shop.inventory">
-                            <td class="item-col">{{item.name | uppercase}}</td>
+                        <tr ng-repeat="item in shop.inventory | orderBy: shop.sortParam">
+                            <td>{{item.name | uppercase}}</td>
                             <td>{{item.color | uppercase}}</td>
                             <td>{{item.quantity}}</td>
                             <td>

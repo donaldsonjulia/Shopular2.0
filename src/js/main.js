@@ -128,7 +128,11 @@
           this.inventory.push(this.item);
 
         };
+        this.sortParam = 'price';
+        this.sortBy = function(property) {
+          this.sortParam = property;
 
+        };
 
     });
 

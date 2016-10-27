@@ -7,7 +7,7 @@ main {
     width: 80%;
     margin: 0 auto;
 
-  table .item-col {
+  th:first-child, td:first-child {
       width: 30%;
     }
 
