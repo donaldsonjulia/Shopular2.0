@@ -1,6 +1,12 @@
 angular.module('shopular')
 .controller('ShopController', function Shop($state) {
 
+
+  $('header').on('click', '#add-new-item', function(event){
+    event.preventDefault();
+    $('.add-item-container').slideToggle();
+  });
+
   $state.go('shopularParent');
 
 
