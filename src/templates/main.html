@@ -1,19 +1,4 @@
-<header>
-    <h2>{{shop.title}}</h2>
-    <nav>
-        <div id="view-inventory" class="nav-option">
-            <i class="material-icons">list</i>View Inventory
-        </div>
-        <div id="add-new-item" class="nav-option">
-            <i class="material-icons">add_box</i>Add New Item
-        </div>
-        <div id="login" class="nav-option" ng-hide="shop.activeSession">
-            <i class="material-icons">account_box</i>Login
-        </div>
-        <div id="login-user" class="nav-option" ng-show="shop.activeSession">
-            <i class="material-icons">account_box</i>{{shop.user}}
-        </nav>
-    </header>
+
     <div class="add-item-container">
         <form name="newItemForm" novalidate ng-submit="newItemForm.$valid && shop.addItem(item)">
 

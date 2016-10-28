@@ -2,16 +2,16 @@ angular.module('shopular')
 .controller('ShopController', function Shop($state) {
 
 
-  $('header').on('click', '#add-new-item', function(event){
-    event.preventDefault();
-    $('.add-item-container').slideToggle();
-  });
+  // $('header').on('click', '#add-new-item', function(event){
+  //   event.preventDefault();
+  //   $('.add-item-container').slideToggle();
+  // });
 
-  $state.go('shopularParent');
-
-
-
-    this.title = 'SHOPULAR';
+  // $state.go('main');
+  //
+  //
+  //
+  //   this.title = 'SHOPULAR';
 
     this.inventory = [
         {
@@ -132,10 +132,10 @@ angular.module('shopular')
     };
 
 
-    this.activeSession = false;
-
-
-    this.user = 'Jane';
+    // this.activeSession = false;
+    //
+    //
+    // this.user = 'Jane';
 
 
 
