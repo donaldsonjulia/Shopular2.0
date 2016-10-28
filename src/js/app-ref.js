@@ -1,13 +1,16 @@
-(function() {
-    'use strict';
 
-    $('header').on('click', '#add-new-item', function(event){
-      event.preventDefault();
-      $('.add-item-container').slideToggle();
-    });
+    //
+    // $('header').on('click', '#add-new-item', function(event){
+    //   event.preventDefault();
+    //   $('.add-item-container').slideToggle();
+    // });
 
-    angular.module('shopular', [])
-    .controller('ShopController', function Shop() {
+    angular.module('shopular')
+    .controller('ShopController', function Shop($state) {
+
+      $state.go('shopularParent');
+
+
 
         this.title = 'SHOPULAR';
 
@@ -129,8 +132,13 @@
 
         };
 
+
+        this.activeSession = false;
+
+
+        this.user = 'Jane';
+
+
+
+
     });
-
-
-
-})();

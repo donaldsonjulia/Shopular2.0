@@ -3,96 +3,21 @@
     <head>
         <meta charset="UTF-8">
         <meta content="width=device-width, initial-scale=1" name="viewport">
-        <title>Angular Shop</title>
+        <title>Shopular2.0</title>
         <link rel="stylesheet" href="lib/styles/main.min.css">
     </head>
 
-    <body ng-controller="ShopController as shop">
-        <header>
-            <h2>{{shop.title}}</h2>
-            <nav>
-                <div id="view-inventory" class="nav-option">
-                    <i class="material-icons">list</i>View Inventory
-                </div>
-                <div id="add-new-item" class="nav-option">
-                    <i class="material-icons">add_box</i>Add New Item
-                </div>
-            </nav>
+      <body>
 
-        </header>
-        <div class="add-item-container">
-            <form name="newItemForm" novalidate ng-submit="newItemForm.$valid && shop.addItem(item)">
+          <ui-view></ui-view>
 
-                <label for="item-name">Name</label>
-                <input id="item-name" ng-model="item.name" type="text" placeholder="Item Name" required></input>
 
-                <label for="item-color">Color</label>
-                <input id="item-color" ng-model="item.color" type="text" placeholder="Color" required></input>
 
-                <label for="item-qty">Quantity</label>
-                <input id="item-qty" ng-model="item.quantity" type="number" placeholder="1" required min="1"></input>
-
-                <label for="item-price">Price</label>
-                <input id="item-price" ng-model="item.price" type="number" required min="0.01" step="0.01" placeholder="$0.00"></input>
-
-                <label for="item-discount">Discount</label>
-                <input id="item-discount" ng-model="item.discount" type="number" placeholder="$0.00" required></input>
-
-                <button type="submit">Add Item</button>
-            </form>
-        </div>
-        <main>
-          <!-- <div class="add-item-container">
-              <form name="newItemForm" novalidate ng-submit="newItemForm.$valid && shop.addItem(item)">
-
-                  <label for="item-name">Name</label>
-                  <input id="item-name" ng-model="item.name" type="text" placeholder="Item Name" required></input>
-
-                  <label for="item-color">Color</label>
-                  <input id="item-color" ng-model="item.color" type="text" placeholder="Color" required></input>
-
-                  <label for="item-qty">Quantity</label>
-                  <input id="item-qty" ng-model="item.quantity" type="number" placeholder="1" required min="1"></input>
-
-                  <label for="item-price">Price</label>
-                  <input id="item-price" ng-model="item.price" type="number" required min="0.01" step="0.01" placeholder="$0.00"></input>
-
-                  <label for="item-discount">Discount</label>
-                  <input id="item-discount" ng-model="item.discount" type="number" placeholder="$0.00" required></input>
-
-                  <button type="submit">Add Item</button>
-              </form>
-          </div> -->
-
-            <div class="shop-content">
-                <table>
-                    <thead>
-                        <th ng-click="shop.sortBy('name')" ng-class="{'sorted': shop.sortParam === 'name'}">Item</th>
-                        <th ng-click="shop.sortBy('color')" ng-class="{'sorted': shop.sortParam === 'color'}">Color</th>
-                        <th ng-click="shop.sortBy('quantity')" ng-class="{'sorted': shop.sortParam === 'quantity'}">Qty</th>
-                        <th class="price-col" ng-click="shop.sortBy('currentPrice')" ng-class="{'sorted': shop.sortParam === 'currentPrice'}">Price</th>
-                    </thead>
-                    <tbody>
-                        <tr ng-repeat="item in shop.inventory | orderBy: shop.sortParam">
-                            <td>{{item.name | uppercase}}</td>
-                            <td>{{item.color | uppercase}}</td>
-                            <td>{{item.quantity}}</td>
-                            <td>
-                                <span ng-class="{'on-sale': item.discount !== 0}">
-                                  {{shop.getPrice(item) | currency}}
-                                </span>
-                                <img class="sale-icon" src="images/sale_tag.png" ng-show="item.discount">
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </main>
-
-        <!-- <script src="./node_modules/angular/angular.js"></script>
+        <script src="./node_modules/angular/angular.js"></script>
         <script src="./node_modules/angular-ui-router/release/angular-ui-router.min.js"></script>
-        <script src="./node_modules/angular-local-storage/dist/angular-local-storage.min.js"></script> -->
-        <script src="./lib/js/vendor.min.js"></script>
-        <script src="./lib/js/main.js"></script>
+        <script src="./node_modules/angular-local-storage/dist/angular-local-storage.min.js"></script>
+        <script src="./node_modules/jquery/dist/jquery.min.js"></script>
+        <script src="./src/js/app.js"></script>
+        <script src="./src/js/controllers/inventory.controller.js"></script>
     </body>
 </html>

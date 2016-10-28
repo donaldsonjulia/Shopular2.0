@@ -22,13 +22,17 @@
         &:hover {
           border-bottom: 4px solid $action-color;
         }
+        i.filter {
+          display: none;
+
+        }
     }
 
     th.sorted {
       background-color: $action-color;
       border-bottom: 4px solid $action-color;
-
     }
+
 
 
     td {
