@@ -2,22 +2,25 @@
 
 div.add-item-container {
 
-  display: none;
-  width: 100%;
+
+  margin: 0 auto;
+  margin-top: $main-content-top-margin;
+
+  width: 50%;
   padding: 20px;
 
-  form {
-    display: flex;
-    justify-content: space-around;
-  }
+  background-color: $twilight;
+  width: 320px;
+  box-shadow: 0 0 12px $medium-gray;
+
 
   input {
+    width: 100%;
+    display: block;
     appearance: none;
     background-color: $base-background-color;
     border: $base-border;
     border-radius: $base-border-radius;
-    box-shadow: $form-box-shadow;
-    box-sizing: border-box;
 
     padding: $base-spacing / 3;
     transition: border-color $base-duration $base-timing;
@@ -28,8 +31,7 @@ div.add-item-container {
     }
 
     &:focus {
-      border-color: $action-color;
-      box-shadow: $form-box-shadow-focus;
+      border-color: $base-border-color;
       outline: none;
     }
 
@@ -48,27 +50,27 @@ div.add-item-container {
   }
 
   input.ng-invalid {
-    border-color: #d3362d;
+    border-color: $action-lilac;
    }
 
   input#item-price,
   input#item-discount{
-      width: 10%;
+      width: 40%;
   }
 
   input#item-qty {
-    width: 5%;
+    width: 20%;
   }
 
   button {
     color: $light-gray;
-    background-color: $twilight;
+    background-color: $action-color;
     border-radius: $base-border-radius;
     border: 0;
     padding: 5px 10px;
      &:hover {
        transform: scale(1.1);
-       background-color: $action-color;
+       background-color: $action-lilac;
      }
 
   }

@@ -7,9 +7,9 @@
         <link rel="stylesheet" href="lib/styles/main.min.css">
     </head>
 
-      <body>
+    <body>
         <header ng-controller="HeaderController as header">
-            <h2>SHOPULAR v2.0</h2>
+            <h2 id="home-title">SHOPULAR v2.0</h2>
             <nav>
                 <div id="view-inventory" class="nav-option">
                     <i class="material-icons">list</i>View Inventory
@@ -22,13 +22,12 @@
                 </div>
                 <div id="login-user" class="nav-option" ng-show="header.activeSession">
                     <i class="material-icons">account_box</i>{{header.user}}
-                </nav>
-            </header>
-
-          <ui-view>
-          </ui-view>
-
-
+                </div>
+            </nav>
+        </header>
+        <main>
+            <ui-view></ui-view>
+        </main>
 
         <script src="./node_modules/angular/angular.js"></script>
         <script src="./node_modules/angular-ui-router/release/angular-ui-router.min.js"></script>

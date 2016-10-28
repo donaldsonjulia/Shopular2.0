@@ -1,8 +1,9 @@
 
 
-  .shop-content {
+ .shop-content {
     width: 80%;
     margin: 0 auto;
+    margin-top: $main-content-top-margin;
 
     table {
       border-collapse: collapse;
@@ -12,6 +13,7 @@
     }
 
     th {
+
       border-bottom: 4px solid $twilight;
       color: $light-gray;
       font-weight: 400;

@@ -1,18 +1,6 @@
 angular.module('shopular')
 .controller('ShopController', function Shop($state) {
 
-
-  // $('header').on('click', '#add-new-item', function(event){
-  //   event.preventDefault();
-  //   $('.add-item-container').slideToggle();
-  // });
-
-  // $state.go('main');
-  //
-  //
-  //
-  //   this.title = 'SHOPULAR';
-
     this.inventory = [
         {
             "id": 2957,
@@ -119,23 +107,20 @@ angular.module('shopular')
 
     this.addItem = function(item) {
       console.log('in');
+      item.id = Date.now();
       this.item = angular.copy(item);
       console.log(this.item);
 
       this.inventory.push(this.item);
+      $state.go('inventory');
 
     };
-    this.sortParam = 'price';
+
+    this.sortParam = 'currentPrice';
     this.sortBy = function(property) {
       this.sortParam = property;
 
     };
-
-
-    // this.activeSession = false;
-    //
-    //
-    // this.user = 'Jane';
 
 
 

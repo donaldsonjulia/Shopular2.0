@@ -1,21 +1,32 @@
 angular.module('shopular')
-.controller('HeaderController', function Header() {
+.controller('HeaderController', function Header($state) {
 
-  // $state.go('main');
+
+  $('header').on('click', '#home-title', function(event){
+    event.preventDefault();
+    $state.go('main');
+  });
+
+  // $('header').on('click', '#add-new-item', function(event){
+  //   event.preventDefault();
+  //   $('.add-item-container').slideToggle();
+  // });
 
   $('header').on('click', '#add-new-item', function(event){
     event.preventDefault();
-    $('.add-item-container').slideToggle();
+    $state.go('add');
+  });
+
+
+  $('header').on('click', '#view-inventory', function(event){
+    event.preventDefault();
+    $state.go('inventory');
   });
 
 
 
-
-    // this.title = 'SHOPULAR v2.0';
     this.activeSession = false;
     this.user = 'Jane';
-
-
 
 
 });

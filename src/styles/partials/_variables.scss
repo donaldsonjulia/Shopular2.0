@@ -1,7 +1,5 @@
 // Breakpoints
 
-$mobile: new-breakpoint(max-width 700px);
-
 
 // Typography
 
@@ -21,6 +19,14 @@ $base-line-height: 1.5;
 $heading-line-height: 1.5;
 
 // Other Sizes
+
+
+$header-height: 10vh;
+$main-content-top-margin: 11vh;   //to avoid fixed position header obscurring the view
+
+
+
+
 $base-border-radius: 3px;
 $base-spacing: $base-line-height * 1em;
 $small-spacing: $base-spacing / 2;
@@ -28,6 +34,7 @@ $base-z-index: 0;
 
 // Colors
 $action-lilac: #ae5cba;
+$action-tint: tint($action-lilac, 60%);
 $twilight: #8c7e7e;
 $alert-red: #d3362d;
 $plum:#693357;
