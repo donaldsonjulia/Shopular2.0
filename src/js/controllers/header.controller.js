@@ -1,5 +1,5 @@
 angular.module('shopular')
-.controller('HeaderController', function Header($state) {
+.controller('HeaderController', function Header(UserService, $state) {
 
 
   $('header').on('click', '#home-title', function(event){
@@ -7,10 +7,6 @@ angular.module('shopular')
     $state.go('main');
   });
 
-  // $('header').on('click', '#add-new-item', function(event){
-  //   event.preventDefault();
-  //   $('.add-item-container').slideToggle();
-  // });
 
   $('header').on('click', '#add-new-item', function(event){
     event.preventDefault();
@@ -23,10 +19,15 @@ angular.module('shopular')
     $state.go('inventory');
   });
 
+  $('header').on('click', '#login', function(event){
+    event.preventDefault();
+    $state.go('login');
+  });
 
 
-    this.activeSession = false;
-    this.user = 'Jane';
+  // this.activeUser = UserService.currentUser;
+  //
+  // this.user = UserService.findUser("admin", "shopularjane");
 
 
 });

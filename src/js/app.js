@@ -22,6 +22,10 @@
       url: 'add',
       parent: 'shopularParent',
       templateUrl: './src/templates/add_item.html'
+    }).state('login', {
+      url: 'login',
+      parent: 'shopularParent',
+      templateUrl: './src/templates/login.html'
     });
 
 

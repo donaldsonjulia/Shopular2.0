@@ -1,13 +1,11 @@
 <div class="login-content">
-  <div class="form-wrap">
-  <h3>Login</h3>
-  <form>
-    <input></input>
-
-
-  </form>
-
-
-</div>
+    <div class="form-wrap">
+        <h3>Login</h3>
+        <form name="loginForm" novalidate ng-submit="loginForm.$valid">
+            <input id="username" ng-model="user.username" type="text" placeholder="Username" required></input>
+            <input id="password" ng-model="user.password" type="text" placeholder="Password" required></input>
+            <button type="submit">Login</button>
+        </form>
+    </div>
 
 </div>

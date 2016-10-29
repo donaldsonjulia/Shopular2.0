@@ -5,11 +5,15 @@
     margin: 0 auto;
     margin-top: $main-content-top-margin;
 
+
+
     table {
       border-collapse: collapse;
       margin: $small-spacing 0;
       table-layout: fixed;
       width: 100%;
+      box-shadow: 0 0 12px $medium-gray;
+
     }
 
     th {
