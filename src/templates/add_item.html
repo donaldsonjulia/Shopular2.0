@@ -2,11 +2,19 @@
     <div class="add-item-container">
         <form name="newItemForm" novalidate ng-submit="newItemForm.$valid && shop.addItem(item)">
 
+          <h3>Add New Item</h3>
+
+          <div class="form-row">
             <label for="item-name">Name</label>
             <input id="item-name" ng-model="item.name" type="text" placeholder="Item Name" required></input>
+          </div>
 
-            <label for="item-color">Color</label>
-            <input id="item-color" ng-model="item.color" type="text" placeholder="Color" required></input>
+            <div class="form-row">
+                  <label for="item-color">Color</label>
+                  <input id="item-color" ng-model="item.color" type="text" placeholder="Color" required></input>
+                  <label for="item-qty">Qty</label>
+                  <input id="item-qty" ng-model="item.quantity" type="number" placeholder="1" required min="1"></input>
+            </div>
 
             <div class="form-row">
                 <label for="item-price">Price</label>
@@ -16,10 +24,6 @@
                 <input id="item-discount" ng-model="item.discount" type="number" placeholder="$0.00" required></input>
             </div>
 
-            <div class="form-row">
-            <label for="item-qty">Qty</label>
-            <input id="item-qty" ng-model="item.quantity" type="number" placeholder="1" required min="1"></input>
-            <button type="submit">Add Item</button>
-          </div>
+            <button type="submit">Add to Inventory</button>
         </form>
     </div>
