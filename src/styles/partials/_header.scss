@@ -8,6 +8,8 @@ header {
   display: flex;
   align-items: center;
 
+
+
         h2 {
           padding-left: 10px;
           float: left;
@@ -30,6 +32,10 @@ header {
 
               }
 
+          }
+
+          .hidden {
+            display: none;
           }
 
       }

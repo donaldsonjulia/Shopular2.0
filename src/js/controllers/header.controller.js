@@ -28,4 +28,8 @@ angular.module('shopular')
     $state.go('login');
   });
 
+  this.sessionStatus = UserService.activeSession;
+
+  this.activeUser = UserService.currentUser;
+
 });

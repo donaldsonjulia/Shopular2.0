@@ -17,13 +17,13 @@
                 <div id="add-new-item" class="nav-option">
                     <i class="material-icons">add_box</i>Add New Item
                 </div>
-                <div id="login" class="nav-option" ng-hide="UserService.activeSession">
+                <div id="login" class="nav-option" ng-class="{'hidden': header.sessionStatus === true}">
                     <i class="material-icons">account_box</i>Login
                 </div>
-                <div id="login-user" class="nav-option" ng-show="header.user.activeSession">
-                    <i class="material-icons">account_box</i>{{UserService.currentUser.name}}
+                <div id="login-user" class="nav-option" ng-class="{'hidden': header.sessionStatus === false}">
+                    <i class="material-icons">account_box</i>{{header.activeUser.name}}
                 </div>
-                <div id="logout" class="nav-option" ng-show="UserService.activeSession">
+                <div id="logout" class="nav-option" ng-class="{'hidden': header.sessionStatus === false}">
                     <i class="material-icons">account_box</i>Logout
                 </div>
             </nav>
