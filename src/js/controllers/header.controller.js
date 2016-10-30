@@ -7,12 +7,10 @@ angular.module('shopular')
     $state.go('main');
   });
 
-
   $('header').on('click', '#add-new-item', function(event){
     event.preventDefault();
     $state.go('add');
   });
-
 
   $('header').on('click', '#view-inventory', function(event){
     event.preventDefault();
@@ -24,10 +22,10 @@ angular.module('shopular')
     $state.go('login');
   });
 
-
-  // this.activeUser = UserService.currentUser;
-  //
-  // this.user = UserService.findUser("admin", "shopularjane");
-
+  $('header').on('click', '#logout', function(event){
+    event.preventDefault();
+    UserService.endUserSession();
+    $state.go('login');
+  });
 
 });

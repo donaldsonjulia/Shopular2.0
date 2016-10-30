@@ -1,5 +1,5 @@
 angular.module('shopular')
-.controller('ShopController', function Shop($state) {
+.controller('ShopController', function Shop(UserService, $state) {
 
     this.inventory = [
         {

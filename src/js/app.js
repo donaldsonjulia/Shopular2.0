@@ -7,8 +7,7 @@
       $stateProvider.state('shopularParent', {
         url: '/',
         abstract: true,
-        template: '<ui-view></ui-view>',
-        controller: 'ShopController as shop'
+        template: '<ui-view></ui-view>'
 
     }).state('main', {
       url: 'main',
@@ -17,17 +16,19 @@
     }).state('inventory', {
       url: 'inventory',
       parent: 'shopularParent',
-      templateUrl: './src/templates/shop_inventory.html'
+      templateUrl: './src/templates/shop_inventory.html',
+      controller: 'ShopController as shop'
     }).state('add', {
       url: 'add',
       parent: 'shopularParent',
-      templateUrl: './src/templates/add_item.html'
+      templateUrl: './src/templates/add_item.html',
+      controller: 'ShopController as shop'
     }).state('login', {
       url: 'login',
       parent: 'shopularParent',
-      templateUrl: './src/templates/login.html'
+      templateUrl: './src/templates/login.html',
+      controller: 'LoginController as login'
     });
-
 
 
     });

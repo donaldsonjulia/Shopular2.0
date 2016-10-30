@@ -15,21 +15,22 @@ angular.module('shopular').service('UserService', function($state) {
     }
   ];
 
-  // this.activeSession = false;
+  this.activeSession = false;
 
   this.currentUser = {};
 
 
 
-  // this.createUserSession = function(foundUser) {
-  //   var sessionOwner = foundUser;
-  //   this.activeSession = true;
-  //   angular.copy(sessionOwner, this.currentUser);
-  // };
 
 function createUserSession(foundUser) {
     this.currentUser = foundUser;
+    $state.go('inventory');
   }
+
+this.endUserSession = function() {
+  console.log('logged out');
+  this.currentUser = {};
+};
 
 
   this.findUser = function(username, password) {
@@ -38,14 +39,10 @@ function createUserSession(foundUser) {
     var foundUser = {};
     usersArray.forEach(function(user){
       if (user.username === username && user.password === password) {
-        console.log('in foundUser if statement');
+        console.log('User logged in: ' + user.name +' ' + user.surname );
         foundUser = user;
+        createUserSession(foundUser);
       }
-
-      createUserSession(foundUser);
-      return foundUser;
-
-
     });
   };
 
