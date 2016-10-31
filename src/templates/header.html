@@ -1,0 +1,20 @@
+<header>
+    <h2 id="home-title">SHOPULAR v2.0</h2>
+    <nav>
+        <div id="view-inventory" class="nav-option">
+            <i class="material-icons">list</i>View Inventory
+        </div>
+        <div id="add-new-item" class="nav-option">
+            <i class="material-icons">add_box</i>Add New Item
+        </div>
+        <div id="login" class="nav-option" ng-hide="header.session">
+            <i class="material-icons">account_box</i>Login
+        </div>
+        <div id="login-user" class="nav-option">
+            <i class="material-icons">account_box</i>{{header.user.name || 'Guest'}}
+        </div>
+        <div id="logout" class="nav-option" ng-show="header.session">
+            <i class="material-icons">account_box</i>Logout
+        </div>
+    </nav>
+</header>

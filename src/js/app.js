@@ -4,29 +4,54 @@
 
       $urlRouterProvider.otherwise('main');
 
-      $stateProvider.state('shopularParent', {
-        url: '/',
-        abstract: true,
-        template: '<ui-view></ui-view>',
-        controller: 'ShopController as shop'
-
-    }).state('main', {
+      $stateProvider.state('main', {
       url: 'main',
-      parent: 'shopularParent',
-      templateUrl: './src/templates/main.html'
-    }).state('inventory', {
+      controller: 'ShopController as shop',
+      views: {
+        'header': {
+          templateUrl: './src/templates/header.html',
+          controller: 'HeaderController as header'
+        },
+        'main': {
+          templateUrl: './src/templates/main.html'
+        }
+      }
+
+    }).state('main.inventory', {
       url: 'inventory',
-      parent: 'shopularParent',
-      templateUrl: './src/templates/shop_inventory.html'
-    }).state('add', {
+      views: {
+        'header': {
+          templateUrl: './src/templates/header.html',
+          controller: 'HeaderController as header'
+        },
+        'main': {
+          templateUrl: './src/templates/shop_inventory.html'
+        }
+      }
+    }).state('main.add', {
       url: 'add',
-      parent: 'shopularParent',
-      templateUrl: './src/templates/add_item.html'
-    }).state('login', {
+      views: {
+        'header': {
+          templateUrl: './src/templates/header.html',
+          controller: 'HeaderController as header'
+        },
+        'main': {
+          templateUrl: './src/templates/add_item.html'
+        }
+      }
+
+    }).state('main.login', {
       url: 'login',
-      parent: 'shopularParent',
-      templateUrl: './src/templates/login.html',
-      controller: 'LoginController as login'
+      views: {
+        'header': {
+          templateUrl: './src/templates/header.html',
+          controller: 'HeaderController as header'
+        },
+        'main': {
+          templateUrl: './src/templates/login.html',
+          controller: 'LoginController as login'
+        }
+      }
     });
 
 

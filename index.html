@@ -8,7 +8,7 @@
     </head>
 
     <body>
-        <header ng-controller="HeaderController as header">
+        <!-- <header ng-controller="HeaderController as header">
             <h2 id="home-title">SHOPULAR v2.0</h2>
             <nav>
                 <div id="view-inventory" class="nav-option">
@@ -27,10 +27,12 @@
                     <i class="material-icons">account_box</i>Logout
                 </div>
             </nav>
-        </header>
+        </header> -->
+
+        <ui-view="header"></ui-view>
 
         <main>
-            <ui-view></ui-view>
+            <ui-view="main"></ui-view>
         </main>
 
         <script src="./node_modules/angular/angular.js"></script>
