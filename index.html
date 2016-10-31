@@ -17,13 +17,13 @@
                 <div id="add-new-item" class="nav-option">
                     <i class="material-icons">add_box</i>Add New Item
                 </div>
-                <div id="login" class="nav-option" ng-class="{'hidden': header.sessionStatus === true}">
+                <div id="login" class="nav-option" ng-hide="header.session">
                     <i class="material-icons">account_box</i>Login
                 </div>
-                <div id="login-user" class="nav-option" ng-class="{'hidden': header.sessionStatus === false}">
-                    <i class="material-icons">account_box</i>{{header.activeUser.name}}
+                <div id="login-user" class="nav-option">
+                    <i class="material-icons">account_box</i>{{header.user.name || 'Guest'}}
                 </div>
-                <div id="logout" class="nav-option" ng-class="{'hidden': header.sessionStatus === false}">
+                <div id="logout" class="nav-option" ng-show="header.session">
                     <i class="material-icons">account_box</i>Logout
                 </div>
             </nav>
@@ -39,6 +39,7 @@
         <script src="./node_modules/jquery/dist/jquery.min.js"></script>
         <script src="./src/js/app.js"></script>
         <script src="./src/js/services/users.service.js"></script>
+        <script src="./src/js/services/inventory.service.js"></script>
         <script src="./src/js/controllers/login.controller.js"></script>
         <script src="./src/js/controllers/header.controller.js"></script>
         <script src="./src/js/controllers/shop.controller.js"></script>
