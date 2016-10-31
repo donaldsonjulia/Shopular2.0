@@ -1,5 +1,5 @@
 angular.module('shopular')
-.controller('HeaderController', function Header(UserService, $state) {
+.controller('HeaderController', function Header($scope, UserService, $state) {
 
 
   $('header').on('click', '#home-title', function(event){

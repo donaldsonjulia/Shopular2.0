@@ -18,6 +18,7 @@ div.login-content {
     width: 100%;
     display: block;
     appearance: none;
+    margin-top: $small-spacing;
     margin-right: $small-spacing / 2;
     background-color: $base-background-color;
     border: $base-border;
@@ -33,13 +34,6 @@ div.login-content {
   input.ng-invalid {
     border-color: $action-lilac;
    }
-
-   div.form-row {
-     display: flex;
-     margin-top: $small-spacing;
-   }
-
-
 
   button {
     width: 90%;
