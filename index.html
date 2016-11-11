@@ -17,26 +17,23 @@
                 <div id="add-new-item" class="nav-option">
                     <i class="material-icons">add_box</i>Add New Item
                 </div>
-                <div id="login" class="nav-option" ng-hide="header.session">
+                <div id="login" class="nav-option" ng-hide="$root.session">
                     <i class="material-icons">account_box</i>Login
                 </div>
                 <div id="login-user" class="nav-option">
-                    <i class="material-icons">account_box</i>{{header.user.name || 'Guest'}}
+                    <i class="material-icons">account_box</i>{{$root.user.name || 'Guest'}}
                 </div>
-                <div id="logout" class="nav-option" ng-show="header.session">
+                <div id="logout" class="nav-option" ng-show="$root.session">
                     <i class="material-icons">account_box</i>Logout
                 </div>
             </nav>
         </header>
-
+        <h3>{{ $root.user }}</h3>
         <main>
             <ui-view></ui-view>
         </main>
 
-        <!-- <script src="./node_modules/angular/angular.js"></script>
-        <script src="./node_modules/angular-ui-router/release/angular-ui-router.min.js"></script>
-        <script src="./node_modules/angular-local-storage/dist/angular-local-storage.min.js"></script>
-        <script src="./node_modules/jquery/dist/jquery.min.js"></script> -->
+
         <script src="./lib/js/angular.min.js"></script>
         <script src="./lib/js/angular-ui-router.min.js"></script>
         <script src="./lib/js/angular-local-storage.min.js"></script>

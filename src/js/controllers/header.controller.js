@@ -1,6 +1,6 @@
 angular.module('shopular')
-.controller('HeaderController', function Header($scope, UserService, $state) {
-
+.controller('HeaderController', function Header($rootScope, $scope, UserService, $state) {
+  console.log('header');
 
   $('header').on('click', '#home-title', function(event){
     event.preventDefault();
@@ -28,8 +28,6 @@ angular.module('shopular')
     $state.go('login');
   });
 
-  this.user = UserService.getCurrentUser();
-  this.session = UserService.getSessionStatus()
-
-
+  //$rootScope.user = UserService.getCurrentUser();
+  //$rootScope.session = UserService.getSessionStatus();
 });

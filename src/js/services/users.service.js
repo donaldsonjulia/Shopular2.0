@@ -1,4 +1,5 @@
-angular.module('shopular').service('UserService', function($state, localStorageService) {
+angular.module('shopular').service('UserService', function($rootScope, $state, localStorageService) {
+
 
   this.allUsers = [
     {
@@ -18,20 +19,22 @@ angular.module('shopular').service('UserService', function($state, localStorageS
 
 
 function setCurrentUser(user) {
+  $rootScope.user = user;
   localStorageService.set('currentUser', user);
 }
 
 this.getCurrentUser = function() {
   return localStorageService.get('currentUser') || {};
-}
+};
 
 function defineSession(status) {
-  localStorageService.set('sessionStatus', status)
+  $rootScope.session = status;
+  localStorageService.set('sessionStatus', status);
 }
 
 this.getSessionStatus = function() {
   return localStorageService.get('sessionStatus');
-}
+};
 
 
 function createUserSession(foundUser) {
@@ -47,7 +50,7 @@ this.endUserSession = function() {
 };
 
 
-  this.findUser = function(username, password) {
+this.findUser = function(username, password) {
     console.log('finding user with UserService');
     var usersArray = this.allUsers;
     var foundUser = {};
@@ -59,7 +62,6 @@ this.endUserSession = function() {
       }
     });
   };
-
 
 
 

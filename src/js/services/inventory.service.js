@@ -93,7 +93,7 @@ function getInventory() {
 }
 
 function setInventory(itemsArray) {
-  localStorageService.set('inventory', itemsArray)
+  localStorageService.set('inventory', itemsArray);
 }
 
 this.fetch = function () {

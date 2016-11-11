@@ -14,7 +14,7 @@ angular.module('shopular')
       } else {
         item.currentPrice = (item.price - item.discount) * tax;
         return (item.price - item.discount) * tax;
-      };
+      }
     };
 
     this.item = {};
